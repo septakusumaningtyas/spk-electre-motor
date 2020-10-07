@@ -40,7 +40,7 @@ export default function Konsultasi(props) {
         fixed
         changeColorOnScroll={{
           height: 400,
-          color: "white"
+          color: "white",
         }}
         {...rest}
       />
@@ -50,9 +50,7 @@ export default function Konsultasi(props) {
             <GridItem xs={12} sm={12} md={6}>
               {/* <img src="assets/img/scooter.png" alt="logo"> */}
               <h1 className={classes.title}>Konsultasi</h1>
-              <h4>
-                Solusi untuk konsultasi mengenai motor
-              </h4>
+              <h4>Solusi untuk konsultasi mengenai motor</h4>
               <h4>yang ingin anda beli.</h4>
               <br />
               <Button
