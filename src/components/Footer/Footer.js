@@ -10,8 +10,9 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // @material-ui/icons
 import Favorite from "@material-ui/icons/Favorite";
-
+import "../../assets/css/style.css";
 import styles from "assets/jss/material-kit-react/components/footerStyle.js";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(styles);
 
@@ -32,53 +33,23 @@ export default function Footer(props) {
         <div className={classes.left}>
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
-              <a
-                href="/"
-                className={classes.block}
-                target="_blank"
-              >
-                Beranda
-              </a>
+              <Link className={classes.block} to="/">Beranda</Link>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a
-                href="/Konsultasi"
-                className={classes.block}
-                target="_blank"
-              >
-                Konsultasi
-              </a>
+              <Link className={classes.block} to="/Konsultasi">Konsultasi</Link>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a
-                href=""
-                className={classes.block}
-                target="_blank"
-              >
-                History
-              </a>
+              <Link className={classes.block} to="/History">History</Link>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a
-                href=""
-                className={classes.block}
-                target="_blank"
-              >
-                Kontak
-              </a>
+              <Link className={classes.block} to="/Kontak">Kontak</Link>
             </ListItem>
           </List>
         </div>
         <div className={classes.right}>
           &copy; {1900 + new Date().getYear()} , made with{" "}
           <Favorite className={classes.icon} /> by{" "}
-          <a
-            href=""
-            className={aClasses}
-            target="_blank"
-          >
-            Motor.Co
-            </a>
+          <a>Motor.Co</a>
         </div>
       </div>
     </footer>

@@ -3,7 +3,7 @@ import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
+import { Link } from "react-router-dom";
 // @material-ui/icons
 
 // core components
@@ -31,10 +31,12 @@ export default function LandingPage(props) {
   const { ...rest } = props;
   return (
     <div>
+      {/* <div>
+        <img src="scooter.png" />
+      </div> */}
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        //image="assets/img/scooter.png"
         brand="Motor.Co"
         rightLinks={<HeaderLinks />}
         fixed
@@ -56,11 +58,13 @@ export default function LandingPage(props) {
               <Button
                 color="danger"
                 size="lg"
-                to="/Konsultasi"
+                to=""
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Konsultasi
+                <Link className="button-link" to="/Konsultasi">
+                  Konsultasi
+                </Link>
               </Button>
             </GridItem>
           </GridContainer>

@@ -18,7 +18,7 @@ import Parallax from "components/Parallax/Parallax.js";
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
-// import ProductSection from "./Sections/ProductSection.js";
+import FormSection from "./Sections/FormSection.js";
 // import TeamSection from "./Sections/TeamSection.js";
 // import WorkSection from "./Sections/WorkSection.js";
 
@@ -26,7 +26,7 @@ const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
-export default function Konsultasi(props) {
+export default function Kontak(props) {
   const classes = useStyles();
   const { ...rest } = props;
   return (
@@ -44,13 +44,13 @@ export default function Konsultasi(props) {
         }}
         {...rest}
       />
-      <Parallax filter image={require("assets/img/scooter2.png")}>
+      <Parallax filter image={require("assets/img/scooter3.png")}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
               {/* <img src="assets/img/scooter.png" alt="logo"> */}
-              <h1 className={classes.title}>Konsultasi</h1>
-              <h4>Beranda - Konsultasi</h4>
+              <h1 className={classes.title}>Kontak</h1>
+              <h4>Beranda - Kontak</h4>
               <br />
             </GridItem>
           </GridContainer>
@@ -58,9 +58,7 @@ export default function Konsultasi(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          {/* <ProductSection />
-          <TeamSection />
-          <WorkSection /> */}
+          <FormSection />
         </div>
       </div>
       <Footer />

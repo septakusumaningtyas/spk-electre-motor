@@ -20,74 +20,28 @@ import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js";
 
-import LandingPage from "views/LandingPage/LandingPage.js";
-import Konsultasi from "views/Konsultasi/Konsultasi.js";
+import "../../assets/css/style.css";
 
 const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
-    // <HashRouter>
-    //     <div>
-    //       <ul className={classes.list}>
-    //         <li><NavLink to="/">Beranda</NavLink></li>
-    //         <li><NavLink to="/Konsultasi">Konsultasi</NavLink></li>
-    //         <li><NavLink to="/History">History</NavLink></li>
-    //         <li><NavLink to="/Kontak">Kontak</NavLink></li>
-    //       </ul>
-    //       <div className={classes.listItem}>
-    //         <Route exact path="/" component={LandingPage}/>
-    //         <Route path="/Konsultasi" component={Konsultasi}/>
-    //         <Route path="/History" component={History}/>
-    //         <Route path="/Kontak" component={Kontak}/>
-    //       </div>
-    //     </div>
-    //   </HashRouter>
+    <div className="grup-link">
       <List className={classes.list}>
         <ListItem className={classes.listItem}>
-          {/* <Button
-            to="/"
-            color="transparent"
-            //target="_blank"
-            className={classes.navLink}
-          >
-            Beranda
-          </Button> */}
-          <Link to="/">Beranda</Link>
+          <Link className="menu-link" to="/">Beranda</Link>
         </ListItem>
         <ListItem className={classes.listItem}>
-          {/* <Button
-            to="/Konsultasi"
-            color="transparent"
-            target="_blank"
-            className={classes.navLink}
-          >
-            Konsultasi
-          </Button> */}
-          <Link to="/Konsultasi">Konsultasi</Link>
-          <Route path="/Konsultasi" component={Konsultasi} />
+          <Link className="menu-link" to="/Konsultasi">Konsultasi</Link>
         </ListItem>
         <ListItem className={classes.listItem}>
-          <Button
-            href=""
-            color="transparent"
-            target="_blank"
-            className={classes.navLink}
-          >
-            History
-          </Button>
+          <Link className="menu-link" to="/History">History</Link>
         </ListItem>
         <ListItem className={classes.listItem}>
-          <Button
-            href=""
-            color="transparent"
-            target="_blank"
-            className={classes.navLink}
-          >
-            Kontak
-          </Button>
+          <Link className="menu-link" to="/Kontak">Kontak</Link>
         </ListItem>
       </List>
+    </div>
   );
 }

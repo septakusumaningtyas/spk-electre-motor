@@ -26,7 +26,7 @@ const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
-export default function Konsultasi(props) {
+export default function History(props) {
   const classes = useStyles();
   const { ...rest } = props;
   return (
@@ -49,8 +49,8 @@ export default function Konsultasi(props) {
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
               {/* <img src="assets/img/scooter.png" alt="logo"> */}
-              <h1 className={classes.title}>Konsultasi</h1>
-              <h4>Beranda - Konsultasi</h4>
+              <h1 className={classes.title}>History</h1>
+              <h4>Beranda - History</h4>
               <br />
             </GridItem>
           </GridContainer>
