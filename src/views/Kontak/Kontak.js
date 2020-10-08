@@ -19,7 +19,7 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
 import FormSection from "./Sections/FormSection.js";
-// import TeamSection from "./Sections/TeamSection.js";
+import ContactSection from "./Sections/ContactSection.js";
 // import WorkSection from "./Sections/WorkSection.js";
 
 const dashboardRoutes = [];
@@ -59,6 +59,7 @@ export default function Kontak(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <FormSection />
+          <ContactSection />
         </div>
       </div>
       <Footer />
