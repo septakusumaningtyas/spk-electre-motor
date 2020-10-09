@@ -11,7 +11,7 @@ import LandingPage from "views/LandingPage/LandingPage.js";
 import Konsultasi from "views/Konsultasi/Konsultasi.js";
 import History from "views/History/History.js";
 import Kontak from "views/Kontak/Kontak.js";
-//import ProfilePage from "views/ProfilePage/ProfilePage.js";
+import Hasil from "views/Hasil/Hasil.js";
 //import LoginPage from "views/LoginPage/LoginPage.js";
 
 var hist = createBrowserHistory();
@@ -29,6 +29,7 @@ ReactDOM.render(
       <Route path="/Konsultasi" component={Konsultasi} />
       <Route path="/History" component={History} />
       <Route path="/Kontak" component={Kontak} />
+      <Route path="/Hasil" component={Hasil} />
     </Switch>
   </Router>,
   document.getElementById("root")

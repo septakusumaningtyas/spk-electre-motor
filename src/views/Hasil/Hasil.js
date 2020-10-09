@@ -3,7 +3,7 @@ import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
+import { Link } from "react-router-dom";
 // @material-ui/icons
 
 // core components
@@ -18,7 +18,7 @@ import Parallax from "components/Parallax/Parallax.js";
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
-import TableSection from "./Section/TableSection.js";
+import HasilSection from "./Sections/HasilSection.js";
 // import TeamSection from "./Sections/TeamSection.js";
 // import WorkSection from "./Sections/WorkSection.js";
 
@@ -26,7 +26,7 @@ const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
-export default function History(props) {
+export default function Konsultasi(props) {
   const classes = useStyles();
   const { ...rest } = props;
   return (
@@ -49,8 +49,8 @@ export default function History(props) {
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
               {/* <img src="assets/img/scooter.png" alt="logo"> */}
-              <h1 className={classes.title}>History</h1>
-              <h4>Beranda - History</h4>
+              <h1 className={classes.title}>Konsultasi</h1>
+              <h4>Beranda - Konsultasi - Hasil</h4>
               <br />
             </GridItem>
           </GridContainer>
@@ -58,7 +58,12 @@ export default function History(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <TableSection />
+          <HasilSection />
+          <Button color="primary">
+            <Link className="button-link" to="/Konsultasi">
+                Kembali
+            </Link>
+          </Button>
         </div>
       </div>
       <Footer />
