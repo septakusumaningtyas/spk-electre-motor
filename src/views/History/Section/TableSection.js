@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -8,38 +8,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
-
-const columns = [
-  { id: 'no', label: 'No', minWidth: 170 },
-  { id: 'nama', label: 'Nama', minWidth: 100 },
-  {
-    id: 'email',
-    label: 'Email',
-    minWidth: 170
-  },
-  {
-    id: 'tanggal',
-    label: 'Tanggal Akses',
-    minWidth: 170,
-  },
-  {
-    id: 'alamat',
-    label: 'Alamat',
-    minWidth: 170,
-  },
-];
-
-function createData(no, nama, email, tanggal, alamat) {
-  return {no, nama, email, tanggal, alamat};
-}
-
-const rows = [
-  createData('1', 'Adi', "@gmail.com", "9-10-2020", "Malang"),
-  createData('2', 'Budi',"@gmail.com" , "9-10-2020", "Malang"),
-  createData('3', 'Chintya', "@gmail.com", "9-10-2020", "Malang"),
-  createData('4', 'Eni', "@gmail.com", "9-10-2020", "Malang"),
-  createData('5', 'Fani', "@gmail.com", "9-10-2020", "Malang"),
-];
+import Axios from 'axios';
 
 const useStyles = makeStyles({
   root: {
@@ -64,6 +33,14 @@ export default function TableSection() {
     setPage(0);
   };
 
+  const [dataPenggunaList,setDataPenggunaList] = useState([]);
+    useEffect(() => {
+        Axios.get('http://localhost:3001/getpengguna')
+            .then((response)=> {
+                setDataPenggunaList(response.data);
+            });
+    }, []);
+
   return (
     <div>
       <br></br><br></br>
@@ -72,29 +49,22 @@ export default function TableSection() {
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
               <TableRow>
-                {columns.map((column) => (
-                  <TableCell
-                    key={column.id}
-                    align={column.align}
-                    style={{ minWidth: column.minWidth }}
-                  >
-                    {column.label}
-                  </TableCell>
-                ))}
+                <TableCell style={{minWidth: 50}}>No</TableCell>
+                <TableCell style={{minWidth: 170}}>Nama</TableCell>
+                <TableCell style={{minWidth: 170}}>Alamat Email</TableCell>
+                <TableCell style={{minWidth: 170}}>Tanggal Akses</TableCell>
+                <TableCell style={{minWidth: 170}}>Alamat</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
+              {dataPenggunaList.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(val=> {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                    {columns.map((column) => {
-                      const value = row[column.id];
-                      return (
-                        <TableCell key={column.id} align={column.align}>
-                          {column.format && typeof value === 'number' ? column.format(value) : value}
-                        </TableCell>
-                      );
-                    })}
+                  <TableRow hover role="checkbox" tabIndex={-1} key={val}>
+                    <TableCell>{val.id}</TableCell>
+                    <TableCell>{val.nama_pengguna}</TableCell>
+                    <TableCell>{val.email_pengguna}</TableCell>
+                    <TableCell>{val.tgl_akses}</TableCell>
+                    <TableCell>{val.alamat_pengguna}</TableCell>
                   </TableRow>
                 );
               })}
@@ -104,7 +74,7 @@ export default function TableSection() {
         <TablePagination
           rowsPerPageOptions={[10, 25, 100]}
           component="div"
-          count={rows.length}
+          count={dataPenggunaList.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onChangePage={handleChangePage}

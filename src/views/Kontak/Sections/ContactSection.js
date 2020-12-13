@@ -20,8 +20,7 @@ export default function ContactSection() {
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
-        <GridItem cs={12} sm={12} md={8}>
-          {/* <h2 className={classes.title}>Hubungi kami</h2> */}
+        <GridItem cs={12} sm={12} md={8}> 
           <h4 className={classes.description}>
             Anda juga bisa menghubungi kami melalui informasi di bawah ini.
           </h4>
