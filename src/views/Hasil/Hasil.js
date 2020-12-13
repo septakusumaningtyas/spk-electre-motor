@@ -65,6 +65,7 @@ export default function Konsultasi(props) {
             </Link>
           </Button>
         </div>
+        <br></br>
       </div>
       <Footer />
     </div>

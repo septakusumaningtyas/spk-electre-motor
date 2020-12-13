@@ -41,9 +41,9 @@ export default function HeaderLinks(props) {
         <ListItem className={classes.listItem}>
           <Link className="menu-link" to="/Kontak">Kontak</Link>
         </ListItem>
-        <ListItem className={classes.listItem}>
+        {/* <ListItem className={classes.listItem}>
           <Link className="menu-link" to="/Login">Login/Register</Link>
-        </ListItem>
+        </ListItem> */}
       </List>
     </div>
   );

@@ -63,8 +63,8 @@ export default function FormSection() {
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
                 <CustomInput
-                  labelText="Masukkan No.Telp"
-                  id="email"
+                  labelText="Tanggal Konsultasi (dd-mm-yy)"
+                  id="tgl"
                   formControlProps={{
                     fullWidth: true
                   }}
@@ -122,22 +122,9 @@ export default function FormSection() {
                 </Select>
               </FormControl>
               </GridItem>
-              
-              
-              <CustomInput
-                labelText="Informasi Tambahan"
-                id="message"
-                formControlProps={{
-                  fullWidth: true,
-                  className: classes.textArea
-                }}
-                inputProps={{
-                  multiline: true,
-                  rows: 5
-                }}
-              />
-
+              <br></br>
               <GridItem xs={12} sm={12} md={4}>
+                <br></br>
                 <Button color="primary">
                     <Link className="button-link" to="/Hasil">
                     Konsultasi
